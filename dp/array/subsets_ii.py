@@ -3,7 +3,28 @@ from typing import List
 
 
 class Solution:
+
+    # 难道我是backtrack的天才吗？
+    # 0ms Beats 100.00%
     def subsetsWithDup(self, nums: List[int]) -> List[List[int]]:
+        nums.sort() # IMPORTANT
+        result = set()
+
+        def backtrack(i: int, path: list[int]):
+            if i == len(nums):
+                result.add(tuple(path))
+                return
+
+            path.append(nums[i])
+            backtrack(i + 1, path)
+            path.pop()
+            backtrack(i + 1, path)
+
+        backtrack(0,[])
+
+        return list(result)
+
+    def subsetsWithDup_first(self, nums: List[int]) -> List[List[int]]:
         result = set()
         nums.sort()
         temp = []
@@ -20,7 +41,7 @@ class Solution:
             temp.append(nums[i])
             last = temp[-1]
             dfs(i+1)
-            temp.pop()
+            temp.pop() # backtrack
             last = temp[-1]
             dfs(i+1)
 
