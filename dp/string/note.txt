@@ -1,0 +1,8 @@
+path.append(s[i])
+backtrack(i+1, path)
+path.pop()
+
+"""
+    You are making a choice.
+    Before trying a different choice, you must revert that change
+"""
