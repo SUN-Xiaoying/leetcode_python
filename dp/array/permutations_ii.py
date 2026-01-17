@@ -5,7 +5,7 @@ from typing import List
 
 class Solution:
 
-    # 7 ms Beats 51.61%
+    # 3 ms Beats 93.20%
     # 空间换时间
     def permuteUnique(self, nums: List[int]) -> List[List[int]]:
         result = []
@@ -16,7 +16,7 @@ class Solution:
         '''
         def backtrack(i:int):
             if i == len(nums):
-                result.append(nums.copy())
+                result.append(nums.copy) # 这里的copy，非常非常重要！！！
                 return
 
             my_set = set()  # <-- move here

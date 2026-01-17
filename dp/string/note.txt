@@ -6,3 +6,9 @@ path.pop()
     You are making a choice.
     Before trying a different choice, you must revert that change
 """
+
+s = s[:-1]
+
+"""
+    remove the last char
+"""
