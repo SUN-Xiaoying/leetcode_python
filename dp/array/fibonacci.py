@@ -21,9 +21,6 @@ class Solution:
 
         return last
 
-
-
-
     # memorize dp: f(i) -> f(i, dp)
     # 43 ms Beats 55.44%
     def fib2(self, n: int) -> int:
