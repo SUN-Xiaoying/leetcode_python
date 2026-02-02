@@ -4,6 +4,8 @@ from typing import List
 
 
 class Solution:
+    # TODO: 严格位置依赖+空间压缩
+
     # 0 ms Beats 100.00%
     # 严格位置依赖
     def numDecodings(self, s: str) -> int:
@@ -19,10 +21,6 @@ class Solution:
                 dp[i] += dp[i+2]
 
         return dp[0]
-
-
-
-
 
     # 3 ms Beats 28.58%
     # dp
