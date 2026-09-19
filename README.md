@@ -90,3 +90,10 @@ INT_MIN = -sys.maxsize - 1   # usually -2**63
         2
         1
 ```
+
+## Random
+
+```python
+# Random integer from 1 to 10, including both endpoints
+number = random.randint(1, 10)
+```
