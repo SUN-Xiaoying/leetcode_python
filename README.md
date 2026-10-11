@@ -1,10 +1,26 @@
-# Set up
+# Setup
+
+Create and activate the project's virtual environment:
+
 ```bash
 python3 -m venv venv
 source venv/bin/activate
 ```
 
-# Upgrade
+In VS Code, open this repository as the workspace. The workspace settings use
+`venv/bin/python` as the interpreter. If VS Code is still using a different
+interpreter, run **Python: Select Interpreter** from the Command Palette and
+choose `venv/bin/python`.
+
+To run the currently open Python file, use **Run → Start Debugging** (F5) and
+select **Python: Current File** if prompted. You can also run a file from the
+integrated terminal, for example:
+
+```bash
+python dp/array/coinChange.py
+```
+
+## Upgrade pip
 
 ```bash
 python -m pip install --upgrade pip
@@ -12,14 +28,15 @@ python -m pip install --upgrade pip
 
 
 ## Python naming
-|Concept| Naming                                  ||
-|---|-----------------------------------------|---|
-|Function and Variable Names| Lowercase with underscores (snake_case) |`string_utils.py`,`math_helpers.py`|
-|Class Names| Camel                                   |`class DataLoader:`|
-Global Variable (Private)|Prefix with an underscore _|`_internal_var = 42`|
+
+| Concept | Convention | Example |
+|---|---|---|
+| Functions and variables | Lowercase with underscores (snake_case) | `string_utils.py`, `math_helpers.py` |
+| Classes | Capitalized words (PascalCase) | `class DataLoader:` |
+| Private module-level names | Prefix with an underscore | `_internal_var = 42` |
 
 
-# Jackpot
+## Miscellaneous Python notes
 
 > No, you do not need to add a semicolon (;) at the end of every statement in Python. **Python uses line breaks to determine the end of a statement, making ; optional in most cases**.
 
@@ -47,8 +64,8 @@ INT_MIN = -sys.maxsize - 1   # usually -2**63
 ### Float
 
 ```python
-    max_value = float('-inf')  # for smallest possible value
-    min_value = float('inf')   # for largest possible value
+    min_value = float('-inf')  # smaller than any finite float
+    max_value = float('inf')   # larger than any finite float
 ```
 
 ## Swap
@@ -94,6 +111,8 @@ INT_MIN = -sys.maxsize - 1   # usually -2**63
 ## Random
 
 ```python
+import random
+
 # Random integer from 1 to 10, including both endpoints
 number = random.randint(1, 10)
 ```
