@@ -26,6 +26,49 @@ python dp/array/coinChange.py
 python -m pip install --upgrade pip
 ```
 
+## 有序表
+insort() 保留重复值，只保证插入后仍然有序：
+```python
+from bisect import insort
+
+nums = [1, 2, 3]
+insort(nums, 2)
+
+print(nums)  # [1, 2, 2, 3]
+```
+
+如果需要自动去重并保持有序，可以用 SortedSet：
+
+```python
+from sortedcontainers import SortedDict, SortedSet
+
+nums = SortedSet([1, 2, 3])
+nums.add(2)
+print(nums)  # SortedSet([1, 2, 3])
+largest = nums.pop()  # 返回 5
+print(s)     # SortedSet([1, 3])
+
+# 类似 TreeMap：按 key 自动排序
+m = SortedDict({3: "c", 1: "a"})
+m[2] = "b"
+print(list(m.items()))  # [(1, 'a'), (2, 'b'), (3, 'c')]
+```
+
+# Heap
+
+默认是小根堆
+```python
+import heapq
+
+heap = []
+heapq.heappush(heap, 3)
+heapq.heappush(heap, 1)
+heapq.heappush(heap, 5)
+
+print(heap[0])             # 查看最小值：1
+print(heapq.heappop(heap)) # 删除并返回最小值：1
+```
+大根堆（最大堆）常用存负数的方式
 
 ## Python naming
 
